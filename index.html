@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Say It! Amerikai angol kezdőknek</title>
+<meta name="theme-color" content="#4f6df5">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Ugrás a tartalomra</a>
+<header class="top">
+  <div class="brand" role="button" tabindex="0" data-go="home"><span class="logo">🗽</span><div><b>Say It!</b><small>Amerikai angol, A1-B1</small></div></div>
+  <div class="top-actions">
+    <span class="pill" id="streak" title="Napi sorozat">🔥 0</span>
+    <button class="icon-btn" id="themeBtn" aria-label="Sötét/világos mód">🌓</button>
+    <button class="icon-btn" id="settingsBtn" aria-label="Beállítások">⚙️</button>
+  </div>
+</header>
+<nav class="tabs" aria-label="Módok">
+  <button data-go="home">🏠<span>Főoldal</span></button>
+  <button data-go="learn">📇<span>Tanulás</span></button>
+  <button data-go="drill">🔁<span>Drill</span></button>
+  <button data-go="quiz">🎧<span>Hallgat és válassz</span></button>
+  <button data-go="pairs">👂<span>Hangpárok</span></button>
+  <button data-go="dialog">💬<span>Kifejezések</span></button>
+</nav>
+<div id="banner" class="banner" hidden></div>
+<main id="main" tabindex="-1"></main>
+<dialog id="settings">
+  <form method="dialog" class="settings">
+    <h2>Beállítások</h2>
+    <label>Hang (en-US)<select id="voiceSel"></select></label>
+    <label>Sebesség<select id="rateSel"><option value="0.95">Normál</option><option value="0.7">Lassú</option><option value="0.5">Nagyon lassú</option></select></label>
+    <label class="chk"><input type="checkbox" id="autoPlay"> Automatikus lejátszás új kártyánál</label>
+    <label class="chk"><input type="checkbox" id="showIpa" checked> IPA kiírása</label>
+    <button type="button" class="btn ghost" id="testVoice">🔊 Hang kipróbálása</button>
+    <hr>
+    <h3>Haladás</h3>
+    <div class="row">
+      <button type="button" class="btn ghost" id="exportBtn">⬇️ Exportálás</button>
+      <label class="btn ghost">⬆️ Importálás<input type="file" id="importFile" accept="application/json" hidden></label>
+      <button type="button" class="btn danger" id="resetBtn">🗑️ Nullázás</button>
+    </div>
+    <p class="muted small">Billentyűk: Szóköz = fordítás, Enter vagy P = lejátszás, M = mikrofon, ← → = lapozás, 1-4 = válasz.</p>
+    <button class="btn primary" value="close">Kész</button>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="data-levels.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
